@@ -149,6 +149,11 @@ def memory_list(project: str | None = None) -> str:
 
 def main():
     db.initialize()
+    import sys
+    print(
+        f"claude-memory MCP server running. Mode: {db.mode}. DB: {db.db_path}. Instance: {INSTANCE_ID}",
+        file=sys.stderr,
+    )
     mcp.run(transport="stdio")
 
 
